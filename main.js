@@ -24,9 +24,10 @@ const tempos = [tempoObjetivo1,tempoObjetivo2,tempoObjetivo3,tempoObjetivo4];
 
 
 
-function calculaTempo(tempoObjetivo){
+
+function calculaTempo(key){
     let tempoAtual = new Date();
-    let tempoFinal = tempoObjetivo1 - tempoAtual;
+    let tempoFinal = tempos[key] - tempoAtual;
     let segundos = Math.floor(tempoFinal/1000);
     let minutos = Math.floor(segundos/60);
     let horas = Math.floor(minutos/60);
@@ -35,22 +36,25 @@ function calculaTempo(tempoObjetivo){
     segundos %= 60;
     minutos %= 60;
     horas %= 24;
-    if(tempoFinal > 0){
+    if(tempoFinal >= 0){
         return dias + " dias " + horas + " horas " + minutos + " minutos " + segundos + " segundos";
-
-    } else {
         
+    } else {
+        "Acabou!!!"
     }
-
+    
     
 }
 
 function atualizaCronometro(){
-    for(let i=0; i<contadores.lenght;i++) {
-        contadores[i].textContent = calculaTempo(tempos[0]);
-    }
+for (let i=0; i<contadores.length;i++){
+    contadores[0].textContent = calculaTempo(1);
+    contadores[1].textContent = calculaTempo(2);
+    contadores[2].textContent = calculaTempo(3);
+    contadores[3].textContent = calculaTempo(4);   
 }
- 
+}
+
 function comecaCronometro(){
     atualizaCronometro();
     setInterval(atualizaCronometro,1000);
