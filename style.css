@@ -15,7 +15,6 @@ body {
     font-family: 'Chakra Petch', sans-serif;
 }
 
-
 .conteudo-principal {
     display: flex;
     flex-direction: column;
@@ -93,17 +92,13 @@ body {
     display:flex;
     justify-content: center;
     flex-wrap: wrap;
+    font-size: 80px;
+    margin: 0;
 }
 .contador-digito{
     padding: 0 16px;
     text-align: center;
     min-width: 100px;
-}
-
-.contador-digito-numero{
-    font-size: 80px;
-    margin: 0;
-
 }
 
 .contador-digito-texto{
